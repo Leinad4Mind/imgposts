@@ -226,7 +226,7 @@ class imgposts_module
 
 				if ($submit)
 				{
-					set_config($config_name, $config_value);
+					$config->set($config_name, $config_value);
 				}
 			}
 
@@ -238,7 +238,7 @@ class imgposts_module
 				{
 					$values = request_var($forum_ignore, array(0 => ''));
 					$news = implode(',', $values);
-					set_config($forum_ignore, $news);
+					$config->set($forum_ignore, $news);
 				}
 
 				$phpbb_log->add('admin', $user->data['user_id'], $user->data['session_ip'], 'LOG_IMG_FROM_POSTS_CONFIG', time(), false);
